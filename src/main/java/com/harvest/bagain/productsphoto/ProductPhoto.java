@@ -1,4 +1,7 @@
-package com.harvest.bagain.products;
+package com.harvest.bagain.productsphoto;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.harvest.bagain.products.Products;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,10 +17,11 @@ public class ProductPhoto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "photo_id")
-    private Long photoId;
+    private Integer photoId;
 
     @ManyToOne
     @JoinColumn(name = "products_code")
+    @JsonBackReference
     private Products product;
 
     @Column(name = "photo_url")

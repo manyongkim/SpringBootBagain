@@ -30,7 +30,6 @@ public class UserJoinReq {
     @NotNull(message = "전화번호는 필수 입력 항목입니다.")
     private String phoneNumber;
     
-    
     private String postalCode;
     private String address;
     private String detailAddress;
